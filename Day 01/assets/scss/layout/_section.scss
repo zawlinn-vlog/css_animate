@@ -1,0 +1,43 @@
+//
+
+.sec {
+  max-width: 90rem;
+  min-height: 30rem;
+
+  padding: 0 4rem;
+
+  position: relative;
+
+  &__container {
+    background-color: getColor(light--3);
+    min-height: inherit;
+    // margin-top: 10rem;
+    padding: 6rem 4rem;
+    border-radius: 0.8rem;
+
+    position: relative;
+    z-index: 30;
+
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &__noti {
+    padding: 1.5rem 4rem;
+    background-color: getColor(secondary);
+    color: getColor(light--2);
+    display: inline-block;
+    border-radius: 0.8rem;
+
+    transform: rotate(-90deg);
+    transition: all 0.3s;
+
+    position: absolute;
+    left: -4rem;
+    top: 6rem;
+    z-index: 10;
+  }
+
+  &:hover &__noti {
+    left: -5.5rem;
+  }
+}
