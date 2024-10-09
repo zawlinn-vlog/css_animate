@@ -4,19 +4,19 @@
   max-width: 90rem;
   min-height: 30rem;
 
-  padding: 0 4rem;
+  // padding: 0 4rem;
 
   position: relative;
 
   &__container {
     background-color: getColor(light--3);
-    min-height: inherit;
+    // min-height: inherit;
     // margin-top: 10rem;
     padding: 6rem 4rem;
     border-radius: 0.8rem;
 
-    position: relative;
-    z-index: 30;
+    // position: absolute;
+    // z-index: 10;
 
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
@@ -28,16 +28,16 @@
     display: inline-block;
     border-radius: 0.8rem;
 
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateY(-112%);
     transition: all 0.3s;
 
     position: absolute;
-    left: -4rem;
+    left: 0;
     top: 6rem;
-    z-index: 10;
+    z-index: -1;
   }
 
   &:hover &__noti {
-    left: -5.5rem;
+    left: -1.5rem;
   }
 }

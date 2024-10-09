@@ -26,9 +26,9 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 75%;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 body {
@@ -96,15 +96,20 @@ h6 {
 .sec__title {
   margin: 3rem 0;
   color: rgba(0, 0, 0, 0.7);
-  text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
 }
 
-.mb__100 {
-  margin-bottom: 10rem;
+.mb__large {
+  margin-bottom: 6.4rem;
 }
 
 .shadow__3d {
   text-shadow: 0 1px 0 hsl(52, 7%, 20%), 0 2px 0 hsl(52, 7%, 18%), 0 3px 0 hsl(52, 7%, 16%), 0 4px 0 hsl(52, 7%, 14%), 0 5px 0 hsl(52, 7%, 12%), 0 6px 0 hsl(52, 7%, 10%), 0 7px 0 hsl(52, 7%, 8%), 0 8px 0 hsl(52, 7%, 6%), 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.col {
+  background-color: var(--primary);
+  color: var(--light--3);
+  font-size: 1.6rem;
 }
 
 .subtitle {
@@ -740,16 +745,12 @@ h6 {
 .sec {
   max-width: 90rem;
   min-height: 30rem;
-  padding: 0 4rem;
   position: relative;
 }
 .sec__container {
   background-color: var(--light--3);
-  min-height: inherit;
   padding: 6rem 4rem;
   border-radius: 0.8rem;
-  position: relative;
-  z-index: 30;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .sec__noti {
@@ -758,15 +759,48 @@ h6 {
   color: var(--light--2);
   display: inline-block;
   border-radius: 0.8rem;
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translateY(-112%);
   transition: all 0.3s;
   position: absolute;
-  left: -4rem;
+  left: 0;
   top: 6rem;
-  z-index: 10;
+  z-index: -1;
 }
 .sec:hover .sec__noti {
-  left: -5.5rem;
+  left: -1.5rem;
+}
+
+.row {
+  background-color: var(--light--1);
+  padding: 3rem 1rem;
+  min-height: 20rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 0 3rem;
+  justify-content: flex-end;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+  align-content: flex-end;
+  align-content: flex-start;
+  align-content: center;
+  align-content: stretch;
+}
+.row > * {
+  flex-shrink: 1;
+  flex-basis: 15rem;
+}
+.row > .col:nth-child(3) {
+  flex-grow: 20;
 }
 
 .wrapper {

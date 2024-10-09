@@ -1,0 +1,43 @@
+//
+
+.row {
+  background-color: getColor(light--1);
+  padding: 3rem 1rem;
+  min-height: 20rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  gap: 0 3rem;
+  //   justify-content: flex-start; // Default
+  justify-content: flex-end;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+
+  align-items: stretch; // Default
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: center;
+  align-items: baseline;
+
+  flex-wrap: wrap;
+
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+  align-content: flex-end;
+  align-content: flex-start;
+  align-content: center;
+  align-content: stretch; // Default
+
+  & > * {
+    // flex-basis: 20rem;
+    // flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 15rem;
+  }
+
+  & > .col:nth-child(3) {
+    flex-grow: 20;
+  }
+}

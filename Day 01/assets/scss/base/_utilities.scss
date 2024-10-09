@@ -22,11 +22,11 @@
 .sec__title {
   margin: 3rem 0;
   color: rgba(0, 0, 0, 0.7);
-  text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  // text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
 }
 
-.mb__100 {
-  margin-bottom: 10rem;
+.mb__large {
+  margin-bottom: 6.4rem;
 }
 
 .shadow__3d {
@@ -36,4 +36,10 @@
     0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
     0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.col {
+  background-color: getColor(primary);
+  color: getColor(light--3);
+  font-size: 1.6rem;
 }
