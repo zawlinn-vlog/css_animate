@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --primary: #4f4cb1;
+  --tertiary__light--1: #8ccce7;
+  --tertiary__light--2: #3898a4;
+  --tertiary__dark--1: #2c7982;
+  --tertiary: #00b3b4;
+  --gray: #888;
+  --light--1: #ddd;
+  --light--2: #f9f9f9;
+  --light--3: #fff;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 75%;
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+@media only screen and (max-width: 31.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picture {
+  max-width: 80rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(3rem, 6rem);
+  grid-auto-flow: dense;
+}
+
+.picture_container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.picture_container:nth-child(4n+1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.picture_container:nth-child(2n) {
+  grid-row: span 3;
+}
+.picture_container:last-child {
+  grid-column: span 2;
+}
+.picture img {
+  display: inline-block;
+  transition: all 0.5s;
+}
+.picture > *:hover img {
+  filter: blur(0.3rem) brightness(60%);
+  transform: scale(1.2);
+}
+.picture_caption {
+  width: 100%;
+  height: 100%;
+  color: #efefef;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center center;
+  font-size: 1.8rem;
+  transform: translateY(1rem);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.picture > *:hover .picture_caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-content: center center;
+}
+
+/*# sourceMappingURL=main.css.map */

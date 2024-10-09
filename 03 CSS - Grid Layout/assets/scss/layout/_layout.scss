@@ -1,0 +1,21 @@
+//
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    [col-start]minmax(1rem, 8rem) [col-end]
+  );
+  grid-auto-rows: minmax(5rem, 8rem);
+  grid-auto-flow: dense;
+  //   grid-template-rows: repeat(3, 5rem);
+
+  //   place-content: center center;
+  //  ှ place-items: center center;
+  gap: 0.5rem;
+}
+
+.col:nth-child(2n + 5) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
