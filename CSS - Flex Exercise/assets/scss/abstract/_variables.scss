@@ -1,0 +1,29 @@
+$primary: #4f4cb1;
+
+$tertiary__light--1: #8ccce7;
+$tertiary__light--2: #3898a4;
+$tertiary__dark--1: #2c7982;
+$tertiary: #00b3b4;
+$gray: #888;
+$light--1: #ddd;
+$light--2: #f9f9f9;
+$light--3: #fff;
+
+$colors: (
+  "primary": $primary,
+
+  "tertiary__light--1": $tertiary__light--1,
+  "tertiary__light--2": $tertiary__light--2,
+  "tertiary__dark--1": $tertiary__dark--1,
+  "tertiary": $tertiary,
+  "gray": $gray,
+  "light--1": $light--1,
+  "light--2": $light--2,
+  "light--3": $light--3,
+);
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+}

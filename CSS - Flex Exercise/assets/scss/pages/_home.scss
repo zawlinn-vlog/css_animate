@@ -1,0 +1,7 @@
+//
+
+.wrapper {
+  min-height: 100vh;
+
+  @extend %d_flex;
+}
