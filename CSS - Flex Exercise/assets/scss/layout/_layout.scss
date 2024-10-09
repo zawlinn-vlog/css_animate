@@ -4,7 +4,7 @@
   max-width: 40rem;
   background-color: getColor(primary);
   border-radius: 0.8rem;
-  padding: 2.4rem 3.2rem;
+  padding: 3.8rem;
 
   // padding: 3.2rem;
 
@@ -32,7 +32,7 @@
     flex-shrink: 0;
     align-self: end;
 
-    transform: translateY(-0.5rem);
+    transform: translateY(-0.6rem);
   }
 
   &__txt {
