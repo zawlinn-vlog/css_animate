@@ -1,0 +1,229 @@
+//
+
+.btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+
+    position: relative;
+  }
+
+  &__groups {
+    & > *:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+  &__3d {
+    padding: 1rem 4rem;
+    background-color: getColor(primary);
+    color: getColor(light--3);
+    // border-radius: 0.8rem;
+
+    box-shadow: -0.6rem 0.6rem 0 getColor(primary);
+    // transition: border 0.1s;
+
+    &:active {
+      box-shadow: -0.3rem 0.3rem 0 getColor(primary);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border: 0.6rem solid transparent;
+
+      position: absolute;
+      //   transition: border 0.1s;
+    }
+
+    &::before {
+      border-left-width: 0;
+      border-right: 0.6rem solid getColor(primary);
+
+      top: 0;
+      left: -0.55rem;
+    }
+
+    &:active::before {
+      border: 0.3rem solid transparent;
+      border-left-width: 0;
+      border-right: 0.3rem solid getColor(primary);
+
+      left: -0.25rem;
+    }
+
+    &::after {
+      border-top: 0.6rem solid getColor(primary);
+      border-bottom-width: 0;
+
+      right: 0;
+      bottom: -0.6rem;
+    }
+
+    &:active::after {
+      border: 0.3rem solid transparent;
+      border-bottom-width: 0;
+      border-top-color: getColor(primary);
+
+      bottom: -0.25rem;
+    }
+  }
+
+  //   Border
+
+  &__border-1 {
+    padding: 1rem 4rem;
+    border: 0.2rem solid getColor(secondary);
+    color: getColor(gray);
+
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: -2rem -0.5rem 0 #000, 2rem 0.5rem 0 #000;
+    }
+  }
+
+  &__border-2 {
+    border-image: linear-gradient(to right, crimson 30%, transparent);
+    border-image-width: 0.5rem;
+    border-image-slice: 5%;
+    padding: 1rem 4rem;
+
+    &:hover {
+      background-image: linear-gradient(to right, crimson, yellow);
+    }
+  }
+
+  &__translate-1 {
+    padding: 1rem 4rem;
+    background-image: linear-gradient(60deg, crimson 50%, white, crimson 70%);
+    background-size: 300%;
+    color: getColor(light--1);
+    background-position: left;
+
+    transition: all 0.3s;
+
+    &:hover {
+      background-position: right;
+    }
+  }
+
+  &__translate-2 {
+    padding: 1rem 4rem;
+    background-color: crimson;
+    color: getColor(light--1);
+    border: 0.2rem solid crimson;
+
+    position: relative;
+
+    &:hover {
+      color: crimson;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 30%;
+      border-radius: 0 0 100% 0;
+
+      background-color: #fff;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      transition: all 0.3s;
+    }
+
+    &::after {
+      content: attr(title);
+
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      color: getColor(light--1);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 10;
+
+      opacity: 0;
+    }
+
+    &:hover::before {
+      height: 100%;
+
+      border-radius: 0 0 0 100%;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      color: crimson;
+    }
+  }
+
+  &__wave-1 {
+    padding: 1rem 4rem;
+    color: #fff;
+    border: 0.1rem solid cadetblue;
+    background-color: cadetblue;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all 0.3s;
+
+    &::before,
+    &::after {
+      content: "";
+
+      height: 500%;
+      aspect-ratio: 1 / 1;
+      display: inline-block;
+      border-radius: 40%;
+      background-color: rgba(#fff, 0.6);
+
+      position: absolute;
+      bottom: 70%;
+      left: -30%;
+
+      animation: circle 5s linear infinite;
+
+      transition: all 0.3s;
+    }
+
+    &::after {
+      animation-delay: 0.5s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      bottom: 150%;
+    }
+
+    &:hover {
+      background-color: cadetblue;
+      color: getColor(light--3);
+    }
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
