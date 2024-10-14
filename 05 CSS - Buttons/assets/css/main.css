@@ -120,6 +120,12 @@ h6 {
   font-size: 1.6rem;
 }
 
+.d__center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .subtitle {
   font-size: 3.8rem;
   display: inline-block;
@@ -275,6 +281,89 @@ h6 {
   opacity: 1;
   color: crimson;
 }
+.btn__translate-3 {
+  padding: 1rem 4rem;
+  color: var(--gray);
+  border: 0.1rem solid var(--gray);
+  position: relative;
+  overflow: hidden;
+}
+.btn__translate-3::before, .btn__translate-3::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+.btn__translate-3::before {
+  background-color: cadetblue;
+  transform: rotate(45deg) scale(3.5);
+  left: -170%;
+  z-index: 10;
+}
+.btn__translate-3:hover::before {
+  left: 0;
+}
+.btn__translate-3::after {
+  content: "Translate 03";
+  z-index: 11;
+  color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn__translate-3:hover::after {
+  color: var(--light--3);
+}
+.btn__translate-4 {
+  padding: 1rem 4rem;
+  color: var(--light--3);
+  background-color: cadetblue;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s;
+}
+.btn__translate-4:hover {
+  color: #fff;
+  background-color: currentColor;
+}
+.btn__translate-4::before, .btn__translate-4::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+}
+.btn__translate-4::before {
+  content: "Press";
+  justify-content: flex-end;
+  background-color: crimson;
+  left: 60%;
+  padding-right: 0.5rem;
+}
+.btn__translate-4::after {
+  content: "Me";
+  padding-left: 0.5rem;
+  justify-content: flex-start;
+  background-color: cadetblue;
+  right: 60%;
+}
+.btn__translate-4:hover::before {
+  left: 0;
+  opacity: 1;
+}
+.btn__translate-4:hover::after {
+  right: 0;
+  opacity: 1;
+}
 .btn__wave-1 {
   padding: 1rem 4rem;
   color: #fff;
@@ -304,6 +393,11 @@ h6 {
   bottom: 150%;
 }
 .btn__wave-1:hover {
+  background-color: cadetblue;
+  color: var(--light--3);
+}
+.btn__wave-2 {
+  padding: 1rem 4rem;
   background-color: cadetblue;
   color: var(--light--3);
 }
