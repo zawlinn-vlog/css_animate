@@ -16,6 +16,12 @@
   --light--3: #fff;
 }
 
+.btn__translate-5 > span {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
 *,
 *::before,
 *::after {
@@ -122,8 +128,10 @@ h6 {
 
 .d__center {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  gap: 2rem;
 }
 
 .subtitle {
@@ -163,9 +171,6 @@ h6 {
   font-size: 1.5rem;
   display: inline-block;
   position: relative;
-}
-.btn__groups > *:not(:last-child) {
-  margin-right: 4rem;
 }
 .btn__3d {
   padding: 1rem 4rem;
@@ -241,7 +246,6 @@ h6 {
   background-color: crimson;
   color: var(--light--1);
   border: 0.2rem solid crimson;
-  position: relative;
 }
 .btn__translate-2:hover {
   color: crimson;
@@ -285,7 +289,6 @@ h6 {
   padding: 1rem 4rem;
   color: var(--gray);
   border: 0.1rem solid var(--gray);
-  position: relative;
   overflow: hidden;
 }
 .btn__translate-3::before, .btn__translate-3::after {
@@ -323,7 +326,6 @@ h6 {
   color: var(--light--3);
   background-color: cadetblue;
   overflow: hidden;
-  position: relative;
   transition: all 0.2s;
 }
 .btn__translate-4:hover {
@@ -363,6 +365,58 @@ h6 {
 .btn__translate-4:hover::after {
   right: 0;
   opacity: 1;
+}
+.btn__translate-5 {
+  width: 12rem;
+  height: 4rem;
+  color: var(--light--3);
+}
+.btn__translate-5 > span {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  transition: all 0.3s;
+}
+.btn__translate-5 span:nth-child(1) {
+  background-color: rgba(95, 158, 160, 0.2);
+  z-index: 2;
+  transition-delay: 1s;
+}
+.btn__translate-5:hover span:nth-child(1) {
+  transform: translate(0.4rem, 0.4rem);
+}
+.btn__translate-5 span:nth-child(2) {
+  background-color: rgba(95, 158, 160, 0.4);
+  z-index: 4;
+  transition-delay: 0.5s;
+}
+.btn__translate-5:hover span:nth-child(2) {
+  transform: translate(0.8rem, 0.8rem);
+}
+.btn__translate-5 span:nth-child(3) {
+  background-color: rgba(95, 158, 160, 0.6);
+  z-index: 6;
+  transition-delay: 0.3333333333s;
+}
+.btn__translate-5:hover span:nth-child(3) {
+  transform: translate(1.2rem, 1.2rem);
+}
+.btn__translate-5 span:nth-child(4) {
+  background-color: rgba(95, 158, 160, 0.8);
+  z-index: 8;
+  transition-delay: 0.25s;
+}
+.btn__translate-5:hover span:nth-child(4) {
+  transform: translate(1.6rem, 1.6rem);
+}
+.btn__translate-5 span:nth-child(5) {
+  background-color: cadetblue;
+  z-index: 10;
+  transition-delay: 0.2s;
+}
+.btn__translate-5:hover span:nth-child(5) {
+  transform: translate(2rem, 2rem);
 }
 .btn__wave-1 {
   padding: 1rem 4rem;
