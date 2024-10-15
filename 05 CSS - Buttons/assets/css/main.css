@@ -542,6 +542,50 @@ h6 {
   margin-left: 0.6rem;
   opacity: 1;
 }
+.btn__translate-10 {
+  padding: 1rem 4rem;
+  background-color: cadetblue;
+  color: var(--light--3);
+  overflow: hidden;
+}
+.btn__translate-10::before, .btn__translate-10::after {
+  content: "";
+  width: 96%;
+  height: 100%;
+  border-radius: 0.8rem;
+  display: inline-block;
+  background-size: 0.5em;
+  position: absolute;
+  left: 2%;
+  transition: all 0.3s;
+}
+.btn__translate-10::before {
+  background-image: linear-gradient(40deg, transparent 0 68%, #e5fc35 0);
+  top: -100%;
+}
+.btn__translate-10::after {
+  background-image: linear-gradient(40deg, #e5fc35 0 30%, transparent 0);
+  top: 100%;
+}
+.btn__translate-10:hover::before, .btn__translate-10:hover::after {
+  top: 0;
+}
+.btn__translate-11 {
+  padding: 1rem 4rem;
+  background-color: none;
+}
+.btn__translate-11::before, .btn__translate-11::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.btn__translate-11::before {
+  background-color: steelblue;
+}
 .btn__wave-1 {
   padding: 1rem 4rem;
   color: #fff;
@@ -1400,6 +1444,7 @@ h6 {
   max-width: 90rem;
   min-height: 30rem;
   position: relative;
+  z-index: 1;
 }
 .sec__container {
   background-color: var(--light--3);
