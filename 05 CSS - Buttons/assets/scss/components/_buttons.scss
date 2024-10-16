@@ -259,12 +259,12 @@
       justify-content: flex-end;
       background-color: crimson;
       left: 60%;
-      padding-right: 0.5rem;
+      padding-right: 0.15rem;
     }
 
     &::after {
       content: "Me";
-      padding-left: 0.5rem;
+      padding-left: 0.15rem;
       justify-content: flex-start;
       background-color: cadetblue;
       right: 60%;
@@ -798,7 +798,50 @@
   }
 
   &__translate-16 {
-    padding: 1rem 4rem;
+    width: 15rem;
+    height: 4rem;
+    background-color: #555;
+    color: getColor(light--3);
+
+    display: flex !important;
+    align-items: center;
+
+    .icon {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      @extend %d__flex;
+      margin-right: 1rem;
+
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 80%;
+        height: 80%;
+
+        display: block;
+        border: 0.1rem dashed getColor(light--3);
+
+        position: absolute;
+        top: 10%;
+        left: 10%;
+      }
+    }
+
+    &:hover {
+      .fa-fan {
+        animation: forwardReverse 1s ease-in-out infinite;
+      }
+      .icon::before {
+        animation: forwardRotate 2s linear infinite;
+      }
+
+      .icon::after {
+        animation: reverseRotate 2s linear infinite;
+      }
+    }
   }
 
   // WAVEs
@@ -854,6 +897,49 @@
     background-color: cadetblue;
     color: getColor(light--3);
   }
+
+  // DOWNLOAD BUTTONs
+
+  &__download,
+  &__upload {
+    width: 15rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    background-color: cadetblue;
+    color: getColor(light--3);
+    text-transform: uppercase;
+
+    display: flex !important;
+    column-gap: 1rem;
+
+    transition: all 0.3s;
+
+    .icon {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      line-height: inherit;
+      background-color: cornflowerblue;
+
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: #38696b;
+    }
+  }
+
+  &__upload {
+    background-color: goldenrod;
+    .icon {
+      background-color: crimson;
+    }
+
+    &:hover {
+      background-color: #bb8d19;
+    }
+  }
 }
 
 @keyframes circle {
@@ -872,5 +958,37 @@
 
   100% {
     background-position: right;
+  }
+}
+
+@keyframes forwardReverse {
+  0% {
+    transform: rotate(0turn);
+  }
+  50% {
+    transform: rotate(1turn);
+  }
+  100% {
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes forwardRotate {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes reverseRotate {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(-1turn);
   }
 }

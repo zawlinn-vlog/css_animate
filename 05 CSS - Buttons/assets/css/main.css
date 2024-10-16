@@ -16,7 +16,7 @@
   --light--3: #fff;
 }
 
-.btn__translate-11::before, .btn__translate-11::after,
+.btn__translate-16 .icon, .btn__translate-11::before, .btn__translate-11::after,
 .btn__translate-11 .txt, .btn__translate-6::before, .btn__translate-6::after, .btn__translate-5 > span {
   display: flex !important;
   justify-content: center;
@@ -346,11 +346,11 @@ h6 {
   justify-content: flex-end;
   background-color: crimson;
   left: 60%;
-  padding-right: 0.5rem;
+  padding-right: 0.15rem;
 }
 .btn__translate-4::after {
   content: "Me";
-  padding-left: 0.5rem;
+  padding-left: 0.15rem;
   justify-content: flex-start;
   background-color: cadetblue;
   right: 60%;
@@ -746,7 +746,38 @@ h6 {
   border-bottom: 0.2rem solid var(--light--3);
 }
 .btn__translate-16 {
-  padding: 1rem 4rem;
+  width: 15rem;
+  height: 4rem;
+  background-color: #555;
+  color: var(--light--3);
+  display: flex !important;
+  align-items: center;
+}
+.btn__translate-16 .icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  position: relative;
+}
+.btn__translate-16 .icon::before, .btn__translate-16 .icon::after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  display: block;
+  border: 0.1rem dashed var(--light--3);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.btn__translate-16:hover .fa-fan {
+  animation: forwardReverse 1s ease-in-out infinite;
+}
+.btn__translate-16:hover .icon::before {
+  animation: forwardRotate 2s linear infinite;
+}
+.btn__translate-16:hover .icon::after {
+  animation: reverseRotate 2s linear infinite;
 }
 .btn__wave-1 {
   padding: 1rem 4rem;
@@ -785,6 +816,38 @@ h6 {
   background-color: cadetblue;
   color: var(--light--3);
 }
+.btn__download, .btn__upload {
+  width: 15rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  background-color: cadetblue;
+  color: var(--light--3);
+  text-transform: uppercase;
+  display: flex !important;
+  column-gap: 1rem;
+  transition: all 0.3s;
+}
+.btn__download .icon, .btn__upload .icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  line-height: inherit;
+  background-color: cornflowerblue;
+  text-align: center;
+}
+.btn__download:hover, .btn__upload:hover {
+  background-color: #38696b;
+}
+.btn__upload {
+  background-color: goldenrod;
+}
+.btn__upload .icon {
+  background-color: crimson;
+}
+.btn__upload:hover {
+  background-color: #bb8d19;
+}
 
 @keyframes circle {
   0% {
@@ -800,6 +863,33 @@ h6 {
   }
   100% {
     background-position: right;
+  }
+}
+@keyframes forwardReverse {
+  0% {
+    transform: rotate(0turn);
+  }
+  50% {
+    transform: rotate(1turn);
+  }
+  100% {
+    transform: rotate(-1turn);
+  }
+}
+@keyframes forwardRotate {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes reverseRotate {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(-1turn);
   }
 }
 /*
