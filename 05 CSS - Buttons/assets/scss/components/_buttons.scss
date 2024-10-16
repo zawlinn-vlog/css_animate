@@ -386,6 +386,7 @@
   &__translate-7 {
     padding: 1rem 4rem;
     border: 0.1px solid red;
+    color: getColor(gray);
     overflow: hidden;
 
     transition: all 0.3s 0.2s;
@@ -421,7 +422,7 @@
     width: 15rem;
     height: 4rem;
     padding-left: 2.5rem;
-    border: 1px solid getColor(gray);
+    // border: 1px solid getColor(gray);
     background-color: cadetblue;
     color: getColor(light--2);
     border-radius: 0.3rem;
@@ -518,6 +519,8 @@
 
     overflow: hidden;
 
+    transition: background-color 0.3s 0.15s;
+
     &::before,
     &::after {
       content: "";
@@ -547,6 +550,7 @@
     }
 
     &:hover {
+      background-color: #111;
       &::before,
       &::after {
         top: 0;
@@ -555,24 +559,246 @@
   }
 
   &__translate-11 {
-    padding: 1rem 4rem;
+    width: 15rem;
+    height: 4rem;
     background-color: none;
 
     &::before,
-    &::after {
+    &::after,
+    .txt {
       content: "";
       width: 100%;
       height: 100%;
       display: inline-block;
 
+      mix-blend-mode: multiply;
+
       position: absolute;
       top: 0;
       left: 0;
+
+      z-index: 5;
+
+      @extend %d__flex;
+
+      transition: all 0.3s;
+    }
+
+    .txt {
+      z-index: 10;
+      mix-blend-mode: normal;
+
+      color: getColor(light--3);
     }
 
     &::before {
       background-color: steelblue;
     }
+
+    &::after {
+      background-color: skyblue;
+      top: -0.3rem;
+      left: -0.3rem;
+
+      z-index: 4;
+    }
+
+    &:hover {
+      &::before {
+        top: 0.6rem;
+        left: -0.6rem;
+
+        box-shadow: 0.6rem -0.6rem 0 skyblue;
+      }
+      &::after {
+        top: -0.6rem;
+        left: 0.6rem;
+        box-shadow: 0.6rem -0.6rem 0 steelblue;
+      }
+    }
+  }
+
+  &__translate-12 {
+    width: 10rem;
+    height: 4rem;
+    line-height: 4rem;
+    color: getColor(light--3);
+    text-align: center;
+    border-radius: 5rem;
+
+    &::before,
+    &::after,
+    .txt {
+      width: 100%;
+      height: 100%;
+      content: "";
+      display: block;
+      border-radius: inherit;
+      background-color: palevioletred;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      transition: all 0.5s;
+    }
+
+    .txt {
+      background-color: brown;
+      letter-spacing: 0.1rem;
+
+      z-index: 10;
+    }
+
+    &:hover {
+      &::before {
+        transform: scale(1.08) translate(-10%, -10%);
+        opacity: 0;
+      }
+      &::after {
+        transform: scale(1.08) translate(10%, 10%);
+        opacity: 0;
+        transition-delay: 0.25s;
+      }
+
+      .txt {
+        box-shadow: -0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.6);
+        transition-delay: 0.5s;
+      }
+    }
+  }
+
+  &__translate-13 {
+    width: 15rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      background-image: linear-gradient(
+        200deg,
+        cadetblue,
+        lightgreen,
+        orange,
+        cadetblue
+      );
+
+      background-size: 300%;
+      background-position: 100%;
+
+      position: absolute;
+      top: -0.4rem;
+      left: -0.4rem;
+      z-index: 5;
+
+      transition: all 1s;
+    }
+
+    .txt {
+      width: calc(100% - 0.4rem);
+      height: calc(100% - 0.4rem);
+      background-color: #444;
+      letter-spacing: 0.1rem;
+
+      color: getColor(light--3);
+      z-index: 10;
+
+      position: absolute;
+      top: -0.18rem;
+      left: -0.22rem;
+
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        animation: runningColor 0.8s linear infinite;
+        // filter: blur(0.2rem) brightness(80%);
+      }
+    }
+
+    &:active {
+      &::after {
+        animation: runningColor 0.8s linear infinite;
+        filter: blur(0.2rem) brightness(80%);
+      }
+      .txt {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__translate-14 {
+    padding: 1rem 4rem;
+    border-radius: 0.6rem;
+    background-color: cadetblue;
+    color: getColor(light--3);
+
+    .txt {
+      letter-spacing: 0.1rem;
+    }
+
+    &::after {
+      content: "10 Msg";
+      background-color: crimson;
+      display: inline-block;
+      font-size: 1rem;
+      padding: 0.05rem 1rem;
+      border-radius: 1rem;
+
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      transform: translate(20%, -50%);
+
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        background-color: darkslateblue;
+      }
+    }
+  }
+
+  &__translate-15 {
+    padding: 1rem 3rem;
+    background-color: cadetblue;
+    color: getColor(light--3);
+    border-radius: 0.6rem;
+
+    .dot {
+      width: 0.1rem;
+      height: 0.1rem;
+      display: inline-block;
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      transform: translate(-50%, 0);
+
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      .dot {
+        width: 6.3rem;
+        height: 78%;
+        border-radius: 0.5rem;
+        border-bottom: 0.2rem solid getColor(light--3);
+      }
+    }
+  }
+
+  &__translate-16 {
+    padding: 1rem 4rem;
   }
 
   // WAVEs
@@ -636,5 +862,15 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes runningColor {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
   }
 }
