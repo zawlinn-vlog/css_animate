@@ -213,6 +213,18 @@ h6 {
   border-top-color: var(--primary);
   bottom: -0.25rem;
 }
+.btn__facebook {
+  padding: 1rem 4em;
+  background-color: #4169e1;
+  color: var(--light--3);
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+.btn__facebook:hover {
+  background-color: #326ab1;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
 .btn__border-1 {
   padding: 1rem 4rem;
   border: 0.2rem solid var(--secondary);
@@ -225,11 +237,11 @@ h6 {
 .btn__border-2 {
   border-image: linear-gradient(to right, crimson 30%, transparent);
   border-image-width: 0.5rem;
-  border-image-slice: 5%;
+  border-image-slice: 1;
   padding: 1rem 4rem;
 }
 .btn__border-2:hover {
-  background-image: linear-gradient(to right, crimson, yellow);
+  background-image: linear-gradient(to right, crimson, transparent);
 }
 .btn__translate-1 {
   padding: 1rem 4rem;
@@ -778,6 +790,28 @@ h6 {
 }
 .btn__translate-16:hover .icon::after {
   animation: reverseRotate 2s linear infinite;
+}
+.btn__translate-17 {
+  padding: 1rem 4rem;
+  background-image: linear-gradient(131deg, transparent, #222, transparent, #222, transparent, #222, transparent, #222, transparent, #222);
+  color: var(--light--3);
+  background-size: 3rem;
+  backdrop-filter: brightness(50%) sepia(60%);
+  border-radius: 0.5rem;
+  background-position: 0 0;
+  transition: all 0.3s;
+}
+.btn__translate-17:hover {
+  background-color: cadetblue;
+  animation: rollingBack 5s linear infinite;
+}
+@keyframes rollingBack {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40rem 0;
+  }
 }
 .btn__wave-1 {
   padding: 1rem 4rem;
